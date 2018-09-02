@@ -1,11 +1,11 @@
 # Elastos.Trinity.Android
-# 提交google chromium代码到github
-- 需要先删除各个第三方的.git仓库
-- 删除.gitignore
-- 将从google拉取的chromium代码提交到git@github.com:elastos/Elastos.Trinity.Android.git
-- 将之前删除.gitignore的文件重新合入（主要是.gitignore忽略了依赖第三方库的代码目录，但同时许多生成的文件，我们确实是不用提交的）
+# submit google chromium code to github
+- firstly delete each third party's .git repository
+- delete .gitignore
+- pull chromium code from google and submite to git@github.com:elastos/Elastos.Trinity.Android.git
+- remerge .gitignore file deleted before （major reason is .gitignore ignore the code category of dependent third party libary，and it produced many files, and we do not have to submit）
 
-# 编译github上的代码
+# compile code from github
 
 ```
 git clone https://github.com/elastos/Elastos.Trinity.Android.git elastos
@@ -13,7 +13,7 @@ cd elastos/src
 export PATH="your_dir/elastos/depot_tools$PATH"
 gn args out/chrome
 ```
-gn 配置参数如下：
+gn configurated parameters：
 ```
 target_os="android"
 target_cpu = "arm"
@@ -28,12 +28,12 @@ proprietary_codecs=true
 enable_remoting=true
 ```
 
-开始编译
+start to compile
 ```
 ninja -C out/chrome chrome_public_apk
 ```
 
-由于代码量巨大，git clone经常会失败，所以请使用git fetch下载代码：
+git clone often failed because of lots of code,please use git fetch to download the code:
 
 ```
 git init
